@@ -1,0 +1,14 @@
+@mixin for-mobile-only($max) {
+    @media screen and (max-width: $max) {
+        & {
+            @content
+        }
+    }
+}
+
+@mixin transform-all($num) {
+    -webkit-transform: rotate($num);
+    -moz-transform: rotate($num);
+    -o-transform: rotate($num);
+    transform: rotate(-$num);
+}

@@ -1,0 +1,70 @@
+        .img-section {
+            position: relative;
+            width: 100%;
+            height: auto;
+            // padding-top: 90px;
+            @include for-mobile-only(450px) {
+                height: auto;
+                // padding: 100px 0;
+            }
+            .img-container {
+                position: relative;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                .container {
+                    display: flex;
+                    // margin-top: 82px;
+                    flex-wrap: wrap;
+                    @include for-mobile-only(450px) {
+                        // flex-wrap: wrap;
+                        justify-content: center;
+                        margin-top: 0;
+                    }
+                }
+                .hexagon {
+                    overflow: hidden;
+                    visibility: hidden;
+                    @include transform-all(120deg);
+                    // transform: rotate(120deg);
+                    cursor: pointer;
+                    position: relative;
+                    left: 0;
+                    top: 0;
+                    margin: 5px;
+                }
+                .hexagon-in1 {
+                    overflow: hidden;
+                    width: 100%;
+                    height: 100%;
+                    @include transform-all(-60deg);
+                    // transform: rotate(-60deg);
+                }
+                .hexagon-in2 {
+                    width: 100%;
+                    height: 100%;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: 50%;
+                    background-image: url(http://pipsum.com/240x240.jpg);
+                    visibility: visible;
+                    @include transform-all(-60deg);
+                    // transform: rotate(-60deg);
+                }
+                .hexagon1 {
+                    width: 124px;
+                    height: 200px;
+                    margin: 0 0 0 -80px;
+                }
+                .hexagon2 {
+                    width: 124px;
+                    height: 200px;
+                    /*margin: -80px 0 0 20px;*/
+                }
+                .dodecagon {
+                    width: 200px;
+                    height: 200px;
+                    margin: -80px 0 0 20px;
+                }
+            }
+        }

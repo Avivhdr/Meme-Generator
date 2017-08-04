@@ -1,0 +1,135 @@
+ .get-in-touch {
+     background-color: #323232;
+     color: #b1b1b1;
+ }
+ 
+ .get-in-touch-head {
+     font-family: "Maven Pro";
+     h1,
+     h4 {
+         font-weight: lighter;
+         margin-bottom: 0;
+     }
+     ;
+     h4 {
+         margin-top: 0;
+     }
+     ;
+     width: 70%;
+     margin: auto 15%;
+     padding-top: 25px;
+     padding-bottom: 15px;
+ }
+ 
+ .get-in-touch-container-input {
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+     input,
+     textarea {
+         border: none;
+         font-size: 10px;
+         padding: 15px;
+         width: 70%;
+         margin-bottom: 14px;
+         margin: 10px 15%;
+         height: 38px;
+         background-color: #454545;
+     }
+     textarea {
+         height: 150px;
+     }
+     .get-in-touch-send {
+         background-color: #2eb398;
+         color: white;
+     }
+ }
+ 
+ ::-webkit-input-placeholder {
+     font-size: 10px;
+     font-family: "Lato", sans-serif;
+     color: #bebebe;
+ }
+ 
+ :-moz-placeholder {
+     font-size: 10px;
+     font-family: "Lato", sans-serif;
+     color: #bebebe;
+ }
+ 
+ ::-moz-placeholder {
+     font-size: 10px;
+     font-family: "Lato", sans-serif;
+     color: #bebebe;
+ }
+ 
+ :-ms-input-placeholder {
+     font-size: 10px;
+     font-family: "Lato", sans-serif;
+     color: #bebebe;
+ }
+ 
+ .get-in-touch-container-details {
+     font-family: "Lato", sans-serif;
+     display: flex;
+     flex-direction: column;
+     text-align: center;
+     line-height: 1.6em;
+ }
+ 
+ .get-in-touch-ul li {
+     list-style-type: none;
+     text-align: left;
+     padding-left: 20px;
+ }
+ 
+ .get-in-touch-ul-container {
+     position: relative;
+     display: inline-block;
+     margin: auto;
+     padding-top: 15px;
+     margin-top: 15px;
+     border-top: 1px solid gray;
+ }
+ 
+ .get-in-touch-p {
+     padding: 0 25px;
+ }
+ 
+ .get-in-touch-ul-geo {
+     background: url(../img/location.png) no-repeat left center;
+ }
+ 
+ .get-in-touch-ul-phone {
+     background: url(../img/phone.png) no-repeat left center;
+ }
+ 
+ .get-in-touch-ul-mail {
+     background: url(../img/mail.png) no-repeat left center;
+ }
+ 
+ @media screen and (min-width:800px) {
+     .get-in-touch-container {
+         display: flex;
+         flex-direction: row;
+         flex-wrap: nowrap;
+     }
+     .get-in-touch-container-input {
+         width: 70%;
+     }
+     .get-in-touch-container-details {
+         width: 30%;
+     }
+     .get-in-touch-ul-container {
+         margin-left: 10px;
+     }
+     .get-in-touch-p {
+         text-align: left;
+         margin-right: 25px;
+         padding: 0;
+     }
+     .get-in-touch-head {
+         width: 78%;
+         margin: auto;
+     }
+ }

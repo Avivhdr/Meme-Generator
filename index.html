@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator</title>
+    <link rel="stylesheet" href="font_awsome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.0/css/swiper.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.0/css/swiper.min.css">
+    <link rel="stylesheet" href="dist/style.css">
+</head>
+
+
+<body>
+
+    <!--HEADER-SECTION  (have a 2 section)-->
+    <!--****
+    **********************************************-->
+    <!--header - mobile-->
+    <header class="moblie">
+        <div class="mobile-header">
+            <div onclick="toggleNav()" class="hamburger" id="hamburger-3">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+        </div>
+        <div class="mobile-header-container">
+            <div class="mobile-header-content">
+                <a href="#">
+                    <p>PORTFOLIO</p>
+                </a>
+                <a href="#details">
+                    <p>ABOUT</p>
+                </a>
+                <a href="">
+                    <p>BLOG</p>
+                </a>
+                <a href="#getInTouch">
+                    <p>GET IN TOUCH</p>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!--header -desktop-->
+    <header class="desktop">
+        <div class="header-desktop-container">
+            <a href="#">
+                <p>PORTFOLIO</p>
+            </a>
+            <a href="#details">
+                <p>ABOUT</p>
+            </a>
+            <img src="img/logo-header.png" alt="">
+            <a href="">
+                <p>BLOG</p>
+            </a>
+            <a href="#getInTouch">
+                <p>GET IN TOUCH</p>
+            </a>
+        </div>
+        <div class="arrow-down"></div>
+    </header>
+    <!--**************************************************-->
+    <section class="search-nav">
+        <div class="search-bar">
+            <input class="search" type="search" name="" value="" placeholder="search...">
+            <button onclick="showAtCol()" type="button"><i class="fa fa-list-alt" aria-hidden="true"></i></button>
+            <button onclick="showAtRow()" type="button"><i class="fa fa-th" aria-hidden="true"></i></button>
+        </div>
+        <div class="img-by-url">
+            <input id="imgUrl" type="text" name="" value="" placeholder="add img by url">
+            <button onclick="imgByUrl()" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
+        </div>
+    </section>
+    <!--keyword box-SECTION  -->
+    <section class="key-word-box-container">
+        <div class="key-word-box">
+
+        </div>
+    </section>
+
+    <!--IMG + MEME-MAKER-SECTION (have a 3 section)-->
+    <!--**************************************************-->
+    <!--meme maker-->
+    <section class="meme-maker">
+        <div class="meme-maker-container">
+
+            <!--up editor-->
+            <div class="editor">
+                <input id="text_up" class="form-control" type="text" placeholder="write some..." height="100" width="500"/><br>
+                <div class="editor-buttons">
+                    <div class="editor-align">
+                        <button onclick="updateText('right' , 'up')" class="" type="button" name="aRight"><i class="fa fa-align-right" aria-hidden="true"></i></button>
+                        <button onclick="updateText('center' , 'up')" class="" type="button" name="aCenter"><i class="fa fa-align-center" aria-hidden="true"></i></button>
+                        <button onclick="updateText('left' , 'up')" class="" type="button" name="aLeft"><i class="fa fa-align-left" aria-hidden="true"></i></button>
+                        <button onclick="updateText('plus', 'up')" class="plus" type="button"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+                        <button onclick="updateText('minus', 'up')" class="minus" type="button"><i class="fa fa-minus-circle" aria-hidden="true"></i></button>
+                        <button onclick="updateText('shadow', 'up')" class="" type="button">Sh</button>
+                        <select id="select-up">
+                            <option value="Comic-Sans-MS">Comic Sans MS</option>
+                            <option value="Impact">Impact</option>
+                        </select>
+                        <input onchange="updateText('color', 'up', this)" type="color" name="favcolor">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mycanvasDiv">
+                <canvas id="myCanvas" style="max-width:500px; max-height:500px;"/>
+           </div> 
+           <!--down editor-->
+        <div class="editor">
+               <input id="text_down" class="form-control" type="text"  placeholder="write some more..." height="100" width="500"/><br>
+               <div class="editor-buttons">
+                   <div class="editor-align">
+                       <button onclick="updateText('right' ,'down')" class="" type="button" name="aRight"><i class="fa fa-align-right" aria-hidden="true"></i></button>
+                       <button onclick="updateText('center' ,'down')" class="" type="button" name="aCenter"><i class="fa fa-align-center" aria-hidden="true"></i></button>
+                       <button onclick="updateText('left' ,'down')" class="" type="button" name="aLeft"><i class="fa fa-align-left" aria-hidden="true"></i></button>
+                       <button onclick="updateText('plus' ,'down')" class="" type="button"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+                       <button onclick="updateText('minus' ,'down')" class="" type="button"><i class="fa fa-minus-circle" aria-hidden="true"></i></button>
+                       <button onclick="updateText('shadow', 'down')" class="" type="button">Sh</button>
+                        <select id="select-down"> 
+                            <option value="Comic-Sans-MS">Comic Sans MS</option>
+                            <option value="Impact">Impact</option>
+                        </select>
+                       <input onchange="updateText('color', 'down', this)" id="color" type="color" name="favcolor"> 
+                   </div>
+               </div>
+
+                <div class="meme-maker-save-reset">
+                    <a onclick="downloadImg(this)" href=""><button class="btn btn-success" type="button" name="save">Save</button></a>
+                    <button onclick="resetInput()" class="btn btn-danger" type="button" name="reset">Reset</button>
+                    <button onclick="closeMemeMaker()" class="btn btn-danger" type="button" name="reset">close</button>
+                </div>
+        </div>
+
+   </section>
+    <!--all memes img ROW display!-->
+     <section class="img-section" >
+        <div class="img-container">
+
+            <div class="container">
+
+                <!--<div class="hexagon hexagon2 a rowOne">
+                    <div class="hexagon-in1">
+                        <div class="hexagon-in2" style="background-image: url('img/meme-img/1.png')"></div>
+                    </div>
+                  </div>-->
+            </div>
+    </section>
+    <!--all memes img COLUM display!-->
+    <section class="img-section-colum-display" style="display:none">
+        <div id="container_img_col" class="container-img-col">
+            <div id="clone" class="clone flex" style="display:none;">
+                    <div class="hexagon">
+                        <div class="hexTop "></div>
+                        <div class="hexBottom "></div>
+                    </div>
+
+                    <div class="img-desc" >
+                        <p id="name">img name</p>
+                        <p id="category">category name</p>
+                    </div>
+            </div> 
+        </div>
+    </section>
+<!--**************************************************-->
+    <!--our details--> 
+    <section id="details" class="our-details">
+
+        <div id="swiper_container_our_details" class="swiper-container">
+            <div id="swiper_our_details" class="swiper-wrapper">
+                <div id="clone_item_details" class="developer-details swiper-slide" style="display:none;">
+                    <div class="hexagon">
+                        <div class="hexTop "></div>
+                        <div class="hexBottom "></div>
+                    </div>
+
+                    <div class="content ">
+                        <h2></h2>
+                        <h3></h3>
+                        <p> </p>
+                        <div class="social-icons ">
+                            <a id="facebook" href=" ">
+                                <img src="img/facebook.png " alt=" ">
+                            </a>
+                            <a href=" ">
+                                <img src="img/twitter.png " alt=" ">
+                            </a>
+                            <a id="google" href=" ">
+                                <img src="img/google.png " alt=" ">
+                            </a>
+                            <a href=" ">
+                                <img src="img/pinterest.png " alt=" ">
+                            </a>
+                            <a id="linkedin" href=" ">
+                                <img src="img/linkedin.png " alt=" ">
+                            </a>
+                            <a href=" ">
+                                <img src="img/dribbble.png " alt=" ">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="our_details_prev" class="swiper-button-prev"></div>
+        <div id="our_details_next" class="swiper-button-next"></div>
+
+    </section>
+
+    <!--get in touch-->
+    <section id="getInTouch" class="get-in-touch ">
+        <div class="get-in-touch-head ">
+            <h1>Get In Touch</h1>
+            <h4>In order to get in touch use the contact form below:</h4>
+        </div>
+
+        <div class="get-in-touch-container">
+            <form name="contactForm" id="getInTouchForm" class="get-in-touch-container-input" method="GET">
+                <input id="formName" type="text" name="fullName" placeholder="Name (Required)" />
+                <input id="formMail" type="email" name="email" placeholder="Email (Required)" />
+                <input id="formSubject" type="text" name="subject" placeholder="Subject" />
+                <textarea id="formMsg" form="getInTouchForm" rows="6 " name="message " placeholder="Write your message here... "></textarea>
+                <input class="get-in-touch-send" type="submit" value="SEND"   />
+            </form>
+
+
+            <div class="get-in-touch-container-details ">
+                <p class="get-in-touch-p ">
+                    Quisque Hendrerit: purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus morbi vitae.
+                </p>
+                <div class="get-in-touch-ul-container ">
+                    <ul class="get-in-touch-ul ">
+                        <li class="get-in-touch-ul-geo ">Elm St. 14/05 Lost City</li>
+                        <li class="get-in-touch-ul-phone ">+ 3528 331 86 35</li>
+                        <li class="get-in-touch-ul-mail ">info@hexalcorp.com</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+ 
+    <!--swiper-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.0/js/swiper.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.0/js/swiper.min.js "></script>
+    <!--Jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js "></script>
+    <!--our javascript -->
+    <script src="js/data.js"></script>
+    <script src="js/key-word-box.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

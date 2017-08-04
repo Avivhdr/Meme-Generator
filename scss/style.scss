@@ -1,0 +1,23 @@
+@import 'vendor';
+@import 'functions';
+@import 'helpers';
+@import 'fonts';
+@import 'vars';
+@import 'layout';
+@import 'base';
+@import 'forms';
+@import 'mixin';
+@import 'animation';
+//responsive
+@import 'hexagon-our-img';
+
+/* Components */
+
+@import 'keywords';
+@import 'search-section';
+@import 'meme-maker';
+@import 'get-in-touch';
+@import 'our-details-section';
+@import 'header';
+@import 'img-section';
+@import 'img-section-colum';

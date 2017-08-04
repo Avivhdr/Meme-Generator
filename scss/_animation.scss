@@ -1,0 +1,44 @@
+@keyframes openMoblienNav {
+    from {
+        width: 0;
+    }
+    to {
+        width: 37%;
+    }
+}
+
+@keyframes closeMoblienNav {
+    from {
+        width: 37%;
+    }
+    to {
+        width: 0;
+    }
+}
+
+@keyframes openMemesMaker {
+    from {
+        height: 0;
+    }
+    to {
+        height: 500px;
+    }
+}
+
+@keyframes closeMemesMaker {
+    from {
+        height: 500px;
+    }
+    to {
+        height: 0;
+    }
+}
+
+.close {
+    animation: closeMoblienNav 0.5s;
+}
+
+.open {
+    animation: openMoblienNav 0.5s;
+    display: block;
+}
