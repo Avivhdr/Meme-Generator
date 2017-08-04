@@ -1,1 +1,5 @@
-"# Meme-Generator" 
+# Meme-Generator
+
+#npm install
+
+#npm run
